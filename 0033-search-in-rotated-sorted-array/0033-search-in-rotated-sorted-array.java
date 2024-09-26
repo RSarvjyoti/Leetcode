@@ -1,7 +1,5 @@
 class Solution {
     public int search(int[] nums, int target) {
-        
-        if(checkArrSortedAndRotate(nums)){
             
             int l = 0, h = nums.length - 1;
 
@@ -29,22 +27,9 @@ class Solution {
                         h = mid - 1;
                     }
                 }
-            }
-            return -1;  
         }
         
         return -1;  // Return -1 if the array is not rotated sorted
-    }
-
-    static boolean checkArrSortedAndRotate(int arr[]) {
-        int n = arr.length;
-        int count = 0;
-        for(int i = 0; i < n; i++) {
-            if(arr[i] > arr[(i + 1) % n]) {
-                count++;
-            }
-        }
-        return count <= 1;
     }
 
 }
